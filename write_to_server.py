@@ -2,7 +2,6 @@ import requests
 import os
 
 def push_it():
-    os.system("rm read.zttf")
     os.system("git add .")
     os.system('git commit -m "updated data"')
     os.system("git push origin")
