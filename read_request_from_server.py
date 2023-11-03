@@ -9,7 +9,7 @@ def display_received_content(data):
         print("Received from server:", json.loads(data)["payload"]["blob"]["rawLines"][0])
     except:
         print("An unexpected error occured !")
-    time.sleep(2)
+    time.sleep(5)
 if __name__ == "__main__":
     while True:
         get_requests()
