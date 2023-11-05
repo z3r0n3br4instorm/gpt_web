@@ -1,6 +1,7 @@
 from urllib import response
 import requests
 import json
+import os
 import time
 global _temp
 _temp = "null"
@@ -15,6 +16,9 @@ def display_received_content(data):
             print("skip")
         else:
             print("Received from server:", json.loads(data)["payload"]["blob"]["rawLines"][0])
+            command_write_gpt = "echo '"+str(json.loads(data)["payload"]["blob"]["rawLines"][0])+"' > gpt_write.zttf"
+            os.system(command_write_gpt)
+
         _temp = json.loads(data)["payload"]["blob"]["rawLines"][0]
     except:
         print("An unexpected error occured !")
