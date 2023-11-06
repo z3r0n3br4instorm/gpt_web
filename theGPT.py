@@ -10,9 +10,9 @@ def push_it():
     os.system("git push origin")
 
 def write_stuff(data):
-    #os.system("client_read.zttf")
-    command = "echo '"+str(data)+"' > client_read.zttf"
+    os.system("rm client_read.zttf")
     push_it()
+    command = "echo '"+str(data)+"' > client_read.zttf"
     os.system(command)
     push_it()
 prompt2 = ""
@@ -30,5 +30,6 @@ while True:
                 write_stuff(__forClient)
                 debug(__forClient)
                 prompt2 = prompt
+    time.sleep(1)
 #    except:
 #        debug("I/O failiure...")
